@@ -134,9 +134,12 @@ p {
     left: 600;
     width: 60%;
     margin-top: 3rem;
-    background-color: rgba(24, 64, 8);
-    color: cornsilk;
     position: absolute;
+    margin-right: 0px;
+    background-color: rgb(219, 126, 38);
+    color: cornsilk;
+    right: 0px
+    /*position: relative;*/
   }
   .intro .intro-text .intro-button {
     width: 100%;
