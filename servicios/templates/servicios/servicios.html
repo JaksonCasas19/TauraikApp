@@ -5,16 +5,23 @@
 {% load static %}
 
 {% block content %}
-<h1>Servicios</h1>
 
-    {% for servicio in servicios %}
-    
-    <div style="color: white;"><p>
-        <h3>{{servicio.titulo}}</h3>
-        <img src="{{servicio.imagen.url}}" width="500" alt="">
-        <p>{{servicio.contenido}}</p>
-    </p></div>
-
+<h1 class="text-center">Servicios</h1>
+<div class="container">
+  <div class="row">
+{% for servicio in servicios %}
+    <div class="col">
+        <div class="card" style="width: 20rem;">
+            <img src="{{servicio.imagen.url}}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{servicio.titulo}}</h5>
+              <p class="card-text">{{servicio.contenido}}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
     {% endfor %}
+  </div>
+</div>
 
 {% endblock %}

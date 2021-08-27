@@ -1,11 +1,18 @@
 body {
   font-family: 'Lora';
-  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg_main.jpg");
+  /*background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg_main.jpg");*/
+  
+  /*background-color: #08AEEA;
+  background-image: linear-gradient(45deg, #08AEEA 21%, #2AF598 100%);*/
+  background-color: #0093E9;
+  background-image: linear-gradient(32deg, #0093E9 0%, #80D0C7 100%);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
 
+p,
+a,
 h1,
 h2,
 h3,
@@ -13,7 +20,10 @@ h4,
 h5,
 h6 {
   font-family: 'Raleway';
-  color: rgba(197, 197, 197, 0.952);
+}
+
+h1{
+  color: #7a7a7a;
 }
 
 p {
@@ -81,7 +91,7 @@ p {
 }
 
 #mainNav {
-  background-color: rgba(24, 64, 8);
+  background-color: rgb(26, 26, 26);
   font-family: 'Raleway';
 }
 
@@ -166,7 +176,7 @@ p {
   position: relative;
   padding: 3rem;
   margin: 0.5rem;
-  background-color: rgba(24, 64, 8);
+  background-color: rgb(26, 26, 26);
   color: cornsilk;
 }
 
@@ -233,7 +243,7 @@ p {
 }
 
 .footer {
-   background-color: rgba(24, 64, 8, 0.8);
+   background-color: rgb(26, 26, 26);
 }
 
 
