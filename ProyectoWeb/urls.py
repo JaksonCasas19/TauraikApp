@@ -19,6 +19,7 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('servicios/', include('servicios.urls')),
     #path('TauraikApp/',include('TauraikApp.urls'))
     path('',include('TauraikApp.urls'))
 ]
