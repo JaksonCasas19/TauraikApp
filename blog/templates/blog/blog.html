@@ -3,30 +3,38 @@
 {% load static %}
 
 {% block content %}
-
+<br>
 <h1 class="text-center">Blog</h1>
+<br>
 <div class="container">
-  <div class="row">
-{% for post in posts %}
-    <div class="col">
-        <div class="card" style="width: 20rem;">
-            <img src="{{servicio.imagen.url}}" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">{{servicio.titulo}}</h5>
-              <p class="card-text">{{servicio.contenido}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
+<div class="row">
+    
+  
+  {% for post in posts %}
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="background-color: white; margin: 5px;">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">World</strong>
+        <h3 class="mb-0">{{post.titulo}}</h3>
+        <div class="mb-1 text-muted">{{post.created}}</div>
+        <p class="card-text mb-auto">{{post.contenido}}</p>
+        <a href="#" class="btn btn-primary">Continue reading</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        
+        {% if post.imagen.url != "" %}
+        <img  src="{{post.imagen.url}}" width="240" height="250" style="border-radius: 10px; margin-top: 5px; margin-bottom: 5px;" >
+        {% endif %}
+
+        
+        
+      </div>
     </div>
-    {% endfor %}
   </div>
+
+  {% endfor %}
 </div>
-
-
-
+</div>
 {% endblock %}
-
-
-
 
 
