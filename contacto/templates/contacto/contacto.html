@@ -5,7 +5,14 @@
 {% block content %}
 <h1 class="text-center">Contacto</h1>
 <div class="contenedorFormulario">
-    <form action="" method="POST" >
+
+    <!--Recepcionar el return enviado en views redirect-->
+    {% if "valido" in request.GET %}
+        <p>Informacion enviada correctamente, gracias</p>
+    {% endif %}
+
+    <form action="" method="POST" > <!--Enviar por POST URL -> Transparante los datos-->
+        {% csrf_token %}
         <table >
         {{miFormulario.as_table}}
         </table>
@@ -16,6 +23,7 @@
     </form>
 
 </div>
-
+<!--Para obtener una información previa al enviar por POST
+{#request.POST#}-->
 
 {% endblock %}
