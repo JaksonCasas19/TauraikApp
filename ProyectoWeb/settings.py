@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'TauraikApp',
     'servicios',
     'blog',
+    'contacto',
 ]
 
 MIDDLEWARE = [
