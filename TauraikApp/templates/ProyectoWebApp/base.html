@@ -30,19 +30,19 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
+          <a class="nav-link text-uppercase text-expanded" style="text-decoration: none;" href="{% url 'Home' %}">Inicio</a>
         </li>
         <li class="nav-item {% if request.path == '/servicios/' %}active{% endif %} px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="{% url 'Servicios' %}">Servicios</a>
+          <a class="nav-link text-uppercase text-expanded" style="text-decoration: none;" href="{% url 'Servicios' %}">Servicios</a>
         </li>
         <li class="nav-item {% if request.path == '/tienda/' %}active{% endif %} px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="{% url 'Tienda' %}">Tienda</a>
+          <a class="nav-link text-uppercase text-expanded" style="text-decoration: none;" href="{% url 'Tienda' %}">Tienda</a>
         </li>
         <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %} px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
+          <a class="nav-link text-uppercase text-expanded" style="text-decoration: none;" href="{% url 'Contacto' %}">Contacto</a>
         </li>
         <li class="nav-item {% if request.path == '/blog/' %}active{% endif %} px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
+          <a class="nav-link text-uppercase text-expanded" style="text-decoration: none;" href="{% url 'Blog' %}">Blog</a>
         </li>
       </ul>
     </div>

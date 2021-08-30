@@ -28,13 +28,15 @@
 </div>
 </div>
 <section>
-  <div style="width: 60%; background-color: darkgrey; margin: auto; text-align: center;">
-      Categorias:
+  <div style="width: 60%; margin: auto; text-align: center;">
+    <h3 style="font-size: 20px;">Categorias</h3>
+    <nav class="blog-pagination" aria-label="Pagination">
       {% for post in posts %}
-        {% for categoria in post.categoria.all %}
-          {{categoria.nombre}} <br>
+        {% for categoria in post.categorias.all %}
+        <a class="btn btn-outline-primary" href="{% url 'categoria' categoria.id %}">{{categoria.nombre}}</a>
         {% endfor %}
       {% endfor %}
+    </nav>
   </div>
 </section>
 {% endblock %}
