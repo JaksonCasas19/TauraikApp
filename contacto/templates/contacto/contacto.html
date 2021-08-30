@@ -3,7 +3,19 @@
 {% load static %}
 
 {% block content %}
-<h1>Contacto</h1>
+<h1 class="text-center">Contacto</h1>
+<div class="contenedorFormulario">
+    <form action="" method="POST" >
+        <table >
+        {{miFormulario.as_table}}
+        </table>
+        <div style="text-align: center;">
+            <input type="submit" value="Enviar" class="botonEnviar">
+        </div>
+    
+    </form>
 
-<p>{{miFormulario}}</p>
+</div>
+
+
 {% endblock %}
