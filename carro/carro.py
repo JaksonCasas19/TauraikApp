@@ -16,7 +16,7 @@ class Carro:
 
     def agregar(self,producto):
 
-        #Si el Id del producto no esta en las claves de nuestro carro me lo agregas
+        #Si el Id del producto no esta en las claves de nuestro carro me lo agregas (Por primera vez)
         if(str(producto.id)not in self.carro.keys()):
             self.carro[producto.id] = {
                 "producto_id":producto.id,
