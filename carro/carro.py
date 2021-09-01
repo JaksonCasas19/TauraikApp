@@ -54,6 +54,13 @@ class Carro:
         for key, value in self.carro.items():
         #Comprobar si la clave de este producto corresponde con el Id de algunos de los productos del carro
             if key==str(producto.id):
-                #Si lo encuentra, se debe incrementar el valor(Cantidad)
-                value["cantidad"] = value["cantidad"]-1
-                break #Para no seguir recorriendo       
+                #Si lo encuentra, debe restar el valor(Cantidad)
+                value["cantidad"] = value["cantidad"]-1 #Restar menos uno
+                if value["cantidad"] < 1: #Si el producto llega a cero se eliminar por completo del carro
+                    self.eliminar(producto)
+                break #Para no seguir recorriendo
+        self.guardar_carro()
+    
+    def limpiar_carro(self):
+        carro=self.session["carro"]={}
+        self.session.modified = True
