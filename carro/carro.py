@@ -18,7 +18,6 @@ class Carro:
             self.carro=carro
 
     def agregar(self,producto):
-
         #Si el Id del producto no esta en las claves de nuestro carro me lo agregas (Por primera vez)
         if(str(producto.id)not in self.carro.keys()):
             self.carro[producto.id] = {
@@ -28,7 +27,6 @@ class Carro:
                 "cantidad":1,
                 "imagen":producto.imagen,
             }
-
         #En el caso que si se encuentra en el carro
         else:
             for key, value in self.carro.items():
@@ -43,3 +41,19 @@ class Carro:
     def guardar_carro(self):
         self.session["carro"]=self.carro
         self.session.modified=True
+    
+    def eliminar(self,producto):
+        #Almacenar el id del producto para poderlo manejar
+        producto.id=str(producto.id)
+        #Comprobar si el Id esta en el producto antes de eliminar
+        if producto.id in self.carro:
+            del self.carro[producto.id] #Una vez eliminado el producto se debe guardar en la siguiente linea
+            self.guardar_carro()
+    
+    def restar_producto(self,producto):
+        for key, value in self.carro.items():
+        #Comprobar si la clave de este producto corresponde con el Id de algunos de los productos del carro
+            if key==str(producto.id):
+                #Si lo encuentra, se debe incrementar el valor(Cantidad)
+                value["cantidad"] = value["cantidad"]-1
+                break #Para no seguir recorriendo       
