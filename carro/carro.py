@@ -29,7 +29,7 @@ class Carro:
             }
         #En el caso que si se encuentra en el carro
         else:
-            for key, value in self.carro.items():
+            for key, value in self.carro.items(     ):
                 #Comprobar si la clave de este producto corresponde con el Id de algunos de los productos del carro
                 if key==str(producto.id):
                     #Si lo encuentra, se debe incrementar el valor(Cantidad)
