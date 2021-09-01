@@ -1,3 +1,6 @@
+from _typeshed import Self
+
+
 class Carro:
     def __init__(self,request):
         #Cuando el usuario agrege por primera vez un Item, esta linea se encargara de guardar los elementos en el carro
@@ -25,3 +28,18 @@ class Carro:
                 "cantidad":1,
                 "imagen":producto.imagen,
             }
+
+        #En el caso que si se encuentra en el carro
+        else:
+            for key, value in self.carro.items():
+                #Comprobar si la clave de este producto corresponde con el Id de algunos de los productos del carro
+                if key==str(producto.id):
+                    #Si lo encuentra, se debe incrementar el valor(Cantidad)
+                    value["cantidad"] = value["cantidad"]+1
+                    break #Para no seguir recorriendo
+        
+        self.guardar_carro()
+        
+    def guardar_carro(self):
+        self.session["carro"]=self.carro
+        self.session.modified=True
