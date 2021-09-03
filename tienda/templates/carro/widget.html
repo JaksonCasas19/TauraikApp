@@ -14,7 +14,10 @@
         {% if request.session.carro.items %}
             <!--Si hay, debe recorrer en todo el carro y mostrarlo-->
             {% for key, value in request.session.carro.items %}
-
+                <tr class="text-center">
+                    <td>{{value.nombre}}</td>
+                    <td>{{value.cantidad}}</td>
+                </tr>
             {% endfor %}
         {% else %}
             <tr>
