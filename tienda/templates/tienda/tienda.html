@@ -7,6 +7,21 @@
 <h1 class="text-center">Tienda</h1>
 <br>
 <div class="container">
+  <div class="row">
+    <div class="col-8"></div>
+    <div class="col-4 float-end">
+        <button type="button" class="btn btn-dark position-relative float-right">
+        <i class='bx bx-cart'></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+      </button>
+
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
 <div class="row">
   {% for producto in productos %}
   <div class="col-md-6">
