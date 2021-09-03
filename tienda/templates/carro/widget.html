@@ -8,7 +8,23 @@
             <th>Cantidad</th>
             <th>Suma</th>
         </tr>
-    
     </thead>
+    <tbody>
+        <!--Si hay elementos en el carro de la peticion-->
+        {% if request.session.carro.items %}
+            <!--Si hay, debe recorrer en todo el carro y mostrarlo-->
+            {% for key, value in request.session.carro.items %}
+
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">
+                    <div class="alert alert-danger text-center">
+                        Sin productos
+                    </div>
+                </td>
+            </tr>
+        {% endif %}
+    </tbody>
    
 </table>
