@@ -10,8 +10,7 @@ class Carro:
         if not carro:
             #Si no hay carro  debemos retornar vacio
             carro = self.session["carro"]={}
-        #else:
-            #Si el usuario agrego al carro
+        #Si el usuario agrego al carro
         self.carro=carro
 
     def agregar(self,producto):
@@ -24,12 +23,12 @@ class Carro:
                 "cantidad":1,
                 "imagen":producto.imagen,
             }
-        #En el caso que si se encuentra en el carro
+        #En el caso que si ya se encuentra en el carro
         else:
             for key, value in self.carro.items():
                 #Comprobar si la clave de este producto corresponde con el Id de algunos de los productos del carro
                 if key==str(producto.id):
-                    #Si lo encuentra, se debe incrementar el valor(Cantidad)
+                    #Si lo encuentra, se debe incrementar el valor(Cantidad) y el precio
                     value["cantidad"] = value["cantidad"]+1
                     value["precio"]=float(value["precio"])+producto.precio
                     break #Para no seguir recorriendo
