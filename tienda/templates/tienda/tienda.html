@@ -4,19 +4,28 @@
 
 {% block content %}
 
-<h1 class="text-center">Tienda</h1>
+
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-8"></div>
-    <div class="col-4 float-end">
-        <button type="button" class="btn btn-dark position-relative float-right">
+    <div class="col-11">
+      <h1 class="text-center">Tienda</h1>
+    </div>
+    <div class="col-1 float-end">
+      <div class="btn-group">
+        <button type="button" class="btn btn-dark position-relative float-right " data-bs-toggle="dropdown" aria-expanded="false">
         <i class='bx bx-cart'></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {{cantidad_general}}
         </span>
       </button>
-      <p>{% include "carro/widget.html" %}</p>
+      <ul class="dropdown-menu" style="padding-right: 13px;">
+        <li><p>{% include "carro/widget.html" %}</p></li>
+
+      </ul>
+
+    </div>
+
 
     </div>
   </div>
