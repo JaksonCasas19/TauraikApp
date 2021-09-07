@@ -1,0 +1,26 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% block title %} Servicios {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="text-center">QR</h1>
+<div class="container">
+  <div class="row">
+{% for miLista in miListas %}
+    <div class="col">
+        <div class="card" style="width: 20rem;">
+            <img src="{{miLista.qr_code.url}}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{miLista.name}}</h5>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

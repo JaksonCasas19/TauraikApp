@@ -25,6 +25,7 @@ urlpatterns = [
     path('tienda/', include('tienda.urls')),
 
     path('carro/', include('carro.urls')),
+    path('check/', include('check.urls')),
 
     #path('TauraikApp/',include('TauraikApp.urls'))
     path('',include('TauraikApp.urls'))
