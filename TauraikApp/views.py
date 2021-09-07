@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 #Importar la clase Servicio de models.py
 
 # Create your views here.
