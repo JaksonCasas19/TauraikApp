@@ -26,6 +26,7 @@ urlpatterns = [
 
     path('carro/', include('carro.urls')),
     path('check/', include('check.urls')),
+    path('capture/', include('capture.urls')),
 
     #path('TauraikApp/',include('TauraikApp.urls'))
     path('',include('TauraikApp.urls'))
