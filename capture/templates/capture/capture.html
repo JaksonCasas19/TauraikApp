@@ -58,6 +58,23 @@
         document.getElementById('txtResult').value = respuesta;
     });
 
+    //Capturar datos input
+    $(document).on('submit','#new_use_form', function(e){
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'/user/create/',
+            data:{
+                name:$('#name').val(),
+                texto:$('#texto').val(),
+                qr:$('#qr').val(),
+            },
+            success:function(){
+
+            }
+        });
+    });
+
 </script>
 
 
