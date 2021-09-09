@@ -24,46 +24,7 @@
 </div>
 
 
-   <div>
-        <video id="previsualizacion" style="width: 40%;"></video>
-    </div>
-    <p></p>
-
-    <input type="text" id="txtResult" />
-
-
-    <script type="text/javascript">
-        //var sonido = new Audio("barcode.wav");
-
-        var scanner = new Instascan.Scanner({
-            video: document.getElementById('previsualizacion'),
-            scanPeriod:5,
-            mirror:false
-        });
-
-        Instascan.Camera.getCameras().then(function(cameras){
-            if(cameras.length > 0){
-                scanner.start(cameras[0]);
-            }else{
-                console.error('No se han encontrado camaras');
-                alert('Camara no encontrada')
-            }
-        }).catch(function(e){
-            console.error(e);
-            alert("Error"+e);
-
-        });
-
-        scanner.addListener('scan',function(respuesta){
-            console.log("Contenido:"+respuesta);
-            //sonido.play();
-            alert(respuesta);
-            //label.value = respuesta;
-
-            document.getElementById('txtResult').value = respuesta;
-        });
-
-    </script>
+   
 
 
 
