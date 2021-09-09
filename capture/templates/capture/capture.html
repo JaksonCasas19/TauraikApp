@@ -18,13 +18,25 @@
         </div>
     </div>
     <div class="col-6 col-md-4">
-        <p>Aqui ira la captura de la info</p>
+       <form id="new_use_form">
+        {% csrf_token %}
+            <input type="text" id="name">
+            <label for="name">Name</label>
+
+            <input type="text" id="estado">
+            <label for="estado">Estado</label>
+
+            <input type="text" id="qr">
+            <label for="qr">QR Capturado</label>
+
+            <input type="submit" value="SUBMIT">
+       </form>
     </div>
   </div>
 
 <p></p>
 
-<input type="text" id="txtResult" />
+<!--<input type="text" id="txtResult" />-->
 
 
 <script type="text/javascript">
@@ -52,29 +64,37 @@
     scanner.addListener('scan',function(respuesta){
         console.log("Contenido:"+respuesta);
         //sonido.play();
-        alert(respuesta);
+        //alert(respuesta);
         //label.value = respuesta;
 
-        document.getElementById('txtResult').value = respuesta;
+        document.getElementById('qr').value = respuesta;
     });
+</script>
 
-    //Capturar datos input
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+       //Capturar datos input
     $(document).on('submit','#new_use_form', function(e){
         e.preventDefault();
         $.ajax({
-            type:'POST',
-            url:'/user/create/',
+            type:"POST",
+            url:"{% url 'create_capture' %}",
             data:{
                 name:$('#name').val(),
-                texto:$('#texto').val(),
+                estado:$('#estado').val(),
                 qr:$('#qr').val(),
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
             },
             success:function(){
-
+                alert("Created user")
+            },
+            error:function(error){
+                console.log(error)
             }
         });
     });
 
+    
 </script>
 
 
