@@ -31,5 +31,8 @@ urlpatterns = [
     path('capture/', include('capture.urls')),
 
     #path('TauraikApp/',include('TauraikApp.urls'))
-    path('',include('TauraikApp.urls'))
+    path('',include('TauraikApp.urls')),
+
+    #Agregar la url para la autenticacion
+    path('accounts/',include('django.contrib.auth.urls'))
 ]
