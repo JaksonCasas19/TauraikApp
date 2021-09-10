@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Categoria, Post 
+#Importar libreria para autenticar antes de acceder a este views
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def blog(request):
