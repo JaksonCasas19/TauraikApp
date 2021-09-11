@@ -5,6 +5,16 @@
 {% block content %}
 <br>
 <h1 class="text-center">Blog</h1>
+
+{% if user.is_authenticated %}
+<center>
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+</center>
+
+{% endif %}
+
+
 <br>
 <div class="container">
 <div class="row">
