@@ -18,7 +18,6 @@ from django.urls import path, include
 from django.urls.conf import include
 #Crear Auth para Djandgo
 from django.contrib.auth import views as auth_views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('servicios/', include('servicios.urls')),
