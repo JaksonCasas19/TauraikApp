@@ -31,7 +31,6 @@ urlpatterns = [
 
     #path('TauraikApp/',include('TauraikApp.urls'))
     path('',include('TauraikApp.urls')),
-
     #Agregar la url para la autenticacion
     #path('accounts/',include('django.contrib.auth.urls'))
     path('accounts/', include('django.contrib.auth.urls')), #auth_views.LoginView.as_view()
